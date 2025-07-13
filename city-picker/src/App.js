@@ -1,7 +1,12 @@
 import './App.css';
+import Form from './Form';
 
 function App() {
-  return
+  return (
+    <div>
+      <Form />
+    </div>
+  );
 }
 
 export default App;
