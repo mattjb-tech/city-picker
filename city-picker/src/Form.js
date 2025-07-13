@@ -1,5 +1,4 @@
 
-
 function Form() {
 
 
@@ -16,3 +15,6 @@ function Form() {
 }
 
 export default Form;
+
+// This is all a component is. It's just a bunch of html items that we stick together. 
+// Sometimes we put in js code too, or variables, or hooks, before the return.  

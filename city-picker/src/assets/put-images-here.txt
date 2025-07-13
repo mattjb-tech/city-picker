@@ -1,1 +1,1 @@
-(Here, meaning in this folder, not in this text file.)
+(Here, meaning in the assets folder, not in this text file.)
