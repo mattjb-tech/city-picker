@@ -1,0 +1,116 @@
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    height: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.5rem;
+}
+
+.logo {
+    width: 13rem;
+    height: auto;
+}
+
+header div h1 {
+    color: #0d47a1;
+    margin: 0;
+}
+
+header div p {
+    font-weight: bold;
+    color: #1976d2;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.questions {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+}
+
+.questions:hover {
+    transform: scale(1.01);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+input[type='radio'] {
+    margin-right: 10px;
+    accent-color: #1976d2;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #1976d2;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #1565c0;
+    transform: scale(1.02);
+}
+
+.result {
+    margin-top: 30px;
+    font-size: 24px;
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 12px;
+    color: #0d47a1;
+}
+
+.result h3 {
+    color: #1976d2;
+}
+
+.result p {
+    margin-top: 10px;
+}
+
+ul {
+    list-style: none;
+}
+
+.result ul li {
+    margin-bottom: 5px;
+}
+
+.card {
+    transition: 0.3s ease;
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}

@@ -1,16 +1,252 @@
+import { useState } from "react";
+import images from './assets/images'
+
+/*
+ok so ill explain what i did here, the steps i followed are: 
+1- i made an array of objects
+2- i stored the answers the user chooses in an array
+3- i stored the final result too
+4-0 i made an arrow function to handle the answers, it recieves two parameters, the question index, and the answer type
+4-1 inside the function, i made a clone of the aswers array, bc i cant work on it
+4-2 the setanswers function takes the new cloned updated answers
+5-0 i made a function to calc the result
+5-1 it has a counter object, it recieves the types of answers
+5-1-0 if the type has already been chosen, it uses its old value
+5-1-1 if not, it sets it as 0
+5-2 both ways i increase 1 to the counter 
+
+
+
+i got bored of explaining lol u get what i did right?
+*/
 
 function Form() {
+  const questions = [ //here i put the questions array, its obv an array of objects, each object has the question and the options
+    {
+      question: "Your Perfect Day Off is:",
+      options: [
+        {answer: "Beach walk", type: "beach"},
+        {answer: "Mountain hike", type: "adventure"},
+        {answer: "Chill at home", type: "relaxation"},
+        {answer: "Museum tour", type: "culture"}
+      ]
+    },
+    {
+      question: "Pick a Dream View:",
+      options: [
+        {answer: "Ocean sunset", type: "beach"},
+        {answer: "Jungle and cliffs", type: "adventure"},
+        {answer: "Forest cabin", type: "relaxation"}, //cabinet 😂
+        {answer: "Old city streets", type: "culture"}
+      ]
+    },
+    {
+      question: "Whats a must when you're packing?",
+      options: [
+        {answer: "Swimsuit", type: "beach"},
+        {answer: "Hiking boots", type: "adventure"},
+        {answer: "A cozy book", type: "relaxation"},
+        {answer: "A camera", type: "culture"}
+      ]
+    },
+    {
+      question: "At dinner, you'd like to have:",
+      options: [
+        {answer: "Grilled seafood", type: "beach"},
+        {answer: "Spicy street food", type: "adventure"},
+        {answer: "Pasta or soup", type: "relaxation"},
+        {answer: "Traditional dishes", type: "culture"}
+      ]
+    },
+    {
+      question: "Your travel selfie is:",
+      options: [
+        {answer: "Beach & sunglasses", type: "beach"},
+        {answer: "Jumping off something", type: "adventure"},
+        {answer: "Tea and clouds", type: "relaxation"},
+        {answer: "With a statue", type: "culture"}
+      ]
+    },
+    {
+      question: "Where do you feel most alive?",
+      options: [
+        {answer: "Near water", type: "beach"},
+        {answer: "In the wild", type: "adventure"},
+        {answer: "In a quiet place", type: "relaxation"},
+        {answer: "In a historic town", type: "culture"}
+      ]
+    },
+  ]
 
+  const destination = {
+    beach: [
+      {
+        name: "Maldives",
+        image: images.maldives,
+        description: "Crystal clear waters and white sand paradise."
+      },
+      {
+        name: "Bali",
+        image: images.bali,
+        description: "Tropical vibes, rice terraces, and beaches."
+      },
+      {
+        name: "Santorini",
+        image: images.santorini,
+        description: "Iconic blue domes and magical sunsets."
+      },
+      {
+        name: "Maui",
+        image: images.maui,
+        description: "Hawaiian island with lush valleys and volcanoes."
+      },
+    ],
+    adventure: [
+      {
+        name: "Patagonia",
+        image: images.patagonia,
+        description: "Mountains, glaciers, and raw nature."
+      },
+      {
+        name: "Queenstown",
+        image: images.queenstown,
+        description: "New Zealand's adventure capital!"
+      },
+      {
+        name: "Nepal",
+        image: images.nepal,
+        description: "The gateway to the Himalayas."
+      },
+      {
+        name: "Peru",
+        image: images.peru,
+        description: "Home to Machu Picchu and jungle treks."
+      },
+    ],
+    relaxation: [
+      {
+        name: "Kyoto",
+        image: images.kyoto,
+        description: "Peaceful temples and cherry blossoms."
+      },
+      {
+        name: "Swiss Alps",
+        image: images.swiss,
+        description: "Breathtaking mountain views and quiet towns."
+      },
+      {
+        name: "Bora Bora",
+        image: images.bora,
+        description: "Luxury overwater bungalows in paradise."
+      },
+      {
+        name: "Iceland",
+        image: images.iceland,
+        description: "Waterfalls, glaciers, and silence."
+      },
+    ],
+    culture: [
+      {
+        name: "Rome",
+        image: images.rome,
+        description: "Ancient ruins and art everywhere."
+      },
+      {
+        name: "Istanbul",
+        image: images.istanbul,
+        description: "Where East meets West."
+      },
+      {
+        name: "Jerusalem",
+        image: images.jerusalem,
+        description: "Spiritual and cultural richness."
+      },
+      {
+        name: "Kyiv",
+        image: images.kyiv,
+        description: "Vibrant streets and deep history."
+      },
+    ]
+  }
+  
+  
+
+  const [answers, setAnswers] = useState(Array(questions.length).fill(null)) //here ill store the answers
+  const [result, setResult] = useState(null) //thats the final result
+  const [recommendedCities, setRecommendedCities] = useState([])
+
+  const handleAnswer = (questionIndex, type) => {
+    const updatedAnswers = [...answers]
+    updatedAnswers[questionIndex] = type
+    setAnswers(updatedAnswers)
+  }
+
+  const calculateResult = () => {
+    const count = {}
+    answers.forEach((type) => {
+      if (type) {
+        count[type] = (count[type] || 0) + 1
+      }
+    })
+    const sorted = Object.entries(count).sort((a, b) => b[1] - a[1])
+    if (sorted.length > 0) {
+      const topType = sorted[0][0]
+      setResult(topType)
+      setRecommendedCities(destination[topType])
+    }
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    if (answers.includes(null)) {
+      alert("Answer all questios before submitting 😑")
+    } else {
+      calculateResult()
+    }
+  }
 
   return (
-    <div>
+    <div className="container">
+      <header>
+        <img src={images.logo1} alt="Logo" className="logo" />
+        <div>
+        <h1 className="logotitle">GlobeQuest</h1>
+        <p className="tagline">Answer. Discover. Go</p>
+        </div>
+      </header>
+      <main>
+        <h1 style={{color: "#0b2d60"}}>Where should you travel?</h1>
+        <form onSubmit={handleSubmit}>
+          {questions.map((q, qIndex) => (
+            <div key={qIndex} className="questions">
+              <h3><strong>{q.question}</strong></h3>
+              {q.options.map((opt, optIndex) => (
+                <label key={{optIndex}} style={{display: "block", marginBottom: "5px"}}>
+                  <input type="radio" name={`question-${qIndex}`} value={opt.type} checked={answers[qIndex] === opt.type } onChange={() => handleAnswer(qIndex, opt.type)} />
+                  {" "} {opt.answer}
+                </label>
+              ))}
+            </div>
+          ))}
 
-        <h1>This header should appear when you run the app.</h1>
-        <p> So should this paragraph.</p>
-        <h2> You can delete all of these once you've tested that they're working</h2>
-        <p> And put the form here instead</p>
-        <h3> :D </h3>
+          <button type="submit" style={{padding: "10px 20px", fontSize:'16px'}}>Submit</button>
+        </form>
+        {result && (
+          <div className="result">
+            <h3>Recommended destinations:</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginTop: "20px" }}>
+              {recommendedCities.map((city, idx) => (
+                <div key={idx} style={{borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 0 10px rgba(0,0,0,0.3)"}} className= "card">
+                  <img src={city.image} alt={city.name} style={{ width: "100%", height: "auto", objectFit: "cover", borderRadius: "8px" }} />
+                  <h3 style={{ margin: "10px 0"}}>{city.name}</h3>
+                  <p style={{ fontSize: "0.9rem" }}>{city.description}</p>
+                </div>
+              ))}
+            </div>
 
+          </div>
+        )}
+      </main>
     </div>     
   )                
 }
