@@ -76,6 +76,87 @@ function Form() {
         {answer: "In a historic town", type: "culture"}
       ]
     },
+    {
+      question: "Your ideal soundtrack while traveling is:",
+      options: [
+        { answer: "Waves crashing", type: "beach" },
+        { answer: "Pumped-up beats", type: "adventure" },
+        { answer: "Chill lo-fi", type: "relaxation" },
+        { answer: "Classical or local tunes", type: "culture" }
+      ]
+    },
+    {
+      question: "Your dream accommodation is:",
+      options: [
+        { answer: "Beach bungalow", type: "beach" },
+        { answer: "Tent under the stars", type: "adventure" },
+        { answer: "Cozy Airbnb", type: "relaxation" },
+        { answer: "Historic hotel", type: "culture" }
+      ]
+    },
+    {
+      question: "Choose a travel motto:",
+      options: [
+        { answer: "Sandy toes, sun-kissed nose", type: "beach" },
+        { answer: "No risk, no reward", type: "adventure" },
+        { answer: "Slow down and breathe", type: "relaxation" },
+        { answer: "Every place has a story", type: "culture" }
+      ]
+    },
+    {
+      question: "How do you take in a new place?",
+      options: [
+        { answer: "Swimming/snorkeling", type: "beach" },
+        { answer: "Climbing or ziplining", type: "adventure" },
+        { answer: "Sitting at a café", type: "relaxation" },
+        { answer: "Walking through museums", type: "culture" }
+      ]
+    },
+    {
+      question: "Which of these speaks to you most?",
+      options: [
+        { answer: "Seashells & sea breeze", type: "beach" },
+        { answer: "Steep trails & adrenaline", type: "adventure" },
+        { answer: "Hammocks & herbal tea", type: "relaxation" },
+        { answer: "Cobblestones & cathedrals", type: "culture" }
+      ]
+    },
+    {
+      question: "Pick your ideal Instagram story:",
+      options: [
+        { answer: "Sunset over the ocean", type: "beach" },
+        { answer: "Hanging off a cliff (safely?)", type: "adventure" },
+        { answer: "Morning coffee & a view", type: "relaxation" },
+        { answer: "Art or architecture", type: "culture" }
+      ]
+    },
+    {
+      question: "How do you prefer to explore a city?",
+      options: [
+        { answer: "Boat or bike", type: "beach" },
+        { answer: "Hiking and trails", type: "adventure" },
+        { answer: "Public transport + naps", type: "relaxation" },
+        { answer: "Walking with a local guide", type: "culture" }
+      ]
+    },
+    {
+      question: "Favourite travel companion:",
+      options: [
+        { answer: "A beach towel", type: "beach" },
+        { answer: "A GoPro", type: "adventure" },
+        { answer: "A good playlist", type: "relaxation" },
+        { answer: "A travel journal", type: "culture" }
+      ]
+    },
+    {
+      question: "What do you crave during travel?",
+      options: [
+        { answer: "Sunshine", type: "beach" },
+        { answer: "Thrill", type: "adventure" },
+        { answer: "Peace", type: "relaxation" },
+        { answer: "Stories", type: "culture" }
+      ]
+    }    
   ]
 
   const destination = {
