@@ -3,6 +3,9 @@ import images from './assets/images';
 import questionData from './assets/json/questions.json';
 import destinationData from './assets/json/destinations.json';
 
+//You are an amazing man. 
+// Keep being you. 
+// :D //
 
 function Form() {  
 
@@ -72,7 +75,10 @@ function Form() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginTop: "20px" }}>
               {recommendedCities.map((city, idx) => (
                 <div key={idx} style={{borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 0 10px rgba(0,0,0,0.3)"}} className= "card">
-                  <img src={images[city.image]} alt={city.name} style={{ width: "100%", height: "auto", objectFit: "cover", borderRadius: "8px" }} />
+                  <img 
+                    src={images[city.image]} 
+                    alt={city.name} 
+                    style={{ width: "100%", height: "auto", objectFit: "cover", borderRadius: "8px" }} />
                   <h3 style={{ margin: "10px 0"}}>{city.name}</h3>
                   <p style={{ fontSize: "0.9rem" }}>{city.description}</p>
                 </div>
