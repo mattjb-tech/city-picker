@@ -2,12 +2,23 @@ import { useState } from "react";
 import images from './assets/images';
 import questionData from './assets/json/questions.json';
 import destinationData from './assets/json/destinations.json';
+import Aos from "aos";
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
-//You are an amazing man. 
-// Keep being you. 
-// :D //
+// Oi Matt, you’re sweeter than a cuppa tea,
+// Like biscuits dunked, you’re proper VIP.
+// If you were code, you’d never throw a glitch
+// You turn me on, like if you were my switch
 
 function Form() {  
+
+  useEffect(() => {
+    Aos.init({
+      duration: 800,
+      once: true
+    })
+  }, []);
 
   const [answers, setAnswers] = useState(Array(questionData.length).fill(null)) //here ill store the answers
   const [result, setResult] = useState(null) //thats the final result
@@ -54,9 +65,10 @@ function Form() {
       </header>
       <main>
         <h1 style={{color: "#0b2d60"}}>Where should you travel?</h1>
+        <h4 style={{marginBottom: "1rem"}}>Answer our 15 questions quiz to help you find out</h4>
         <form onSubmit={handleSubmit}>
           {questionData.map((q, qIndex) => (
-            <div key={qIndex} className="questions">
+            <div key={qIndex} className="questions" data-aos="fade-up">
               <h3><strong>{q.question}</strong></h3>
               {q.options.map((opt, optIndex) => (
                 <label key={{optIndex}} style={{display: "block", marginBottom: "5px"}}>
@@ -74,7 +86,7 @@ function Form() {
             <h3>Recommended destinations:</h3>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "20px", marginTop: "20px" }}>
               {recommendedCities.map((city, idx) => (
-                <div key={idx} style={{borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 0 10px rgba(0,0,0,0.3)"}} className= "card">
+                <div key={idx} style={{borderRadius: "10px", padding: "10px", textAlign: "center", boxShadow: "0 0 10px rgba(0,0,0,0.3)"}} className= "card" data-aos="fade-up">
                   <img 
                     src={images[city.image]} 
                     alt={city.name} 
