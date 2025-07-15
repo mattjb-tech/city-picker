@@ -1,0 +1,90 @@
+{
+  "beach": [
+    {
+      "name": "Maldives",
+      "image": "maldives",
+      "description": "Crystal clear waters and white sand paradise."
+    },
+    {
+      "name": "Bali",
+      "image": "bali",
+      "description": "Tropical vibes, rice terraces, and beaches."
+    },
+    {
+      "name": "Santorini",
+      "image": "santorini",
+      "description": "Iconic blue domes and magical sunsets."
+    },
+    {
+      "name": "Maui",
+      "image": "maui",
+      "description": "Hawaiian island with lush valleys and volcanoes."
+    }
+  ],
+  "adventure": [
+    {
+      "name": "Patagonia",
+      "image": "patagonia",
+      "description": "Mountains, glaciers, and raw nature."
+    },
+    {
+      "name": "Queenstown",
+      "image": "queenstown",
+      "description": "New Zealand's adventure capital!"
+    },
+    {
+      "name": "Nepal",
+      "image": "nepal",
+      "description": "The gateway to the Himalayas."
+    },
+    {
+      "name": "Peru",
+      "image": "peru",
+      "description": "Home to Machu Picchu and jungle treks."
+    }
+  ],
+  "relaxation": [
+    {
+      "name": "Kyoto",
+      "image": "kyoto",
+      "description": "Peaceful temples and cherry blossoms."
+    },
+    {
+      "name": "Swiss Alps",
+      "image": "swiss",
+      "description": "Breathtaking mountain views and quiet towns."
+    },
+    {
+      "name": "Bora Bora",
+      "image": "bora",
+      "description": "Luxury overwater bungalows in paradise."
+    },
+    {
+      "name": "Iceland",
+      "image": "iceland",
+      "description": "Waterfalls, glaciers, and silence."
+    }
+  ],
+  "culture": [
+    {
+      "name": "Rome",
+      "image": "rome",
+      "description": "Ancient ruins and art everywhere."
+    },
+    {
+      "name": "Istanbul",
+      "image": "istanbul",
+      "description": "Where East meets West."
+    },
+    {
+      "name": "Jerusalem",
+      "image": "jerusalem",
+      "description": "Spiritual and cultural richness."
+    },
+    {
+      "name": "Kyiv",
+      "image": "kyiv",
+      "description": "Vibrant streets and deep history."
+    }
+  ]
+}
