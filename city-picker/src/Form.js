@@ -1,27 +1,13 @@
 import { useState } from "react";
-import images from './assets/images'
+import { useEffect } from "react";
 
-/*
-ok so ill explain what i did here, the steps i followed are: 
-1- i made an array of objects
-2- i stored the answers the user chooses in an array
-3- i stored the final result too
-4-0 i made an arrow function to handle the answers, it recieves two parameters, the question index, and the answer type
-4-1 inside the function, i made a clone of the aswers array, bc i cant work on it
-4-2 the setanswers function takes the new cloned updated answers
-5-0 i made a function to calc the result
-5-1 it has a counter object, it recieves the types of answers
-5-1-0 if the type has already been chosen, it uses its old value
-5-1-1 if not, it sets it as 0
-5-2 both ways i increase 1 to the counter 
+import images from './assets/images';
+import questionData from './assets/questions.json';
+import destinationData from 'destinations.json';
 
-
-
-i got bored of explaining lol u get what i did right?
-*/
 
 function Form() {
-  const questions = [ //here i put the questions array, its obv an array of objects, each object has the question and the options
+  const questions = [
     {
       question: "Your Perfect Day Off is:",
       options: [
@@ -36,7 +22,7 @@ function Form() {
       options: [
         {answer: "Ocean sunset", type: "beach"},
         {answer: "Jungle and cliffs", type: "adventure"},
-        {answer: "Forest cabin", type: "relaxation"}, //cabinet 😂
+        {answer: "Forest cabin", type: "relaxation"},
         {answer: "Old city streets", type: "culture"}
       ]
     },

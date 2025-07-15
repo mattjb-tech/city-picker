@@ -1,0 +1,56 @@
+[
+  {
+    "question": "Your Perfect Day Off is:",
+    "options": [
+      {"answer": "Beach walk", "type": "beach"},
+      {"answer": "Mountain hike", "type": "adventure"},
+      {"answer": "Chill at home", "type": "relaxation"},
+      {"answer": "Museum tour", "type": "culture"}
+    ]
+  },
+  {
+    "question": "Pick a Dream View:",
+    "options": [
+      {"answer": "Ocean sunset", "type": "beach"},
+      {"answer": "Jungle and cliffs", "type": "adventure"},
+      {"answer": "Forest cabin", "type": "relaxation"},
+      {"answer": "Old city streets", "type": "culture"}
+    ]
+  },
+  {
+    "question": "Whats a must when you're packing?",
+    "options": [
+      {"answer": "Swimsuit", "type": "beach"},
+      {"answer": "Hiking boots", "type": "adventure"},
+      {"answer": "A cozy book", "type": "relaxation"},
+      {"answer": "A camera", "type": "culture"}
+    ]
+  },
+  {
+    "question": "At dinner, you'd like to have:",
+    "options": [
+      {"answer": "Grilled seafood", "type": "beach"},
+      {"answer": "Spicy street food", "type": "adventure"},
+      {"answer": "Pasta or soup", "type": "relaxation"},
+      {"answer": "Traditional dishes", "type": "culture"}
+    ]
+  },
+  {
+    "question": "Your travel selfie is:",
+    "options": [
+      {"answer": "Beach & sunglasses", "type": "beach"},
+      {"answer": "Jumping off something", "type": "adventure"},
+      {"answer": "Tea and clouds", "type": "relaxation"},
+      {"answer": "With a statue", "type": "culture"}
+    ]
+  },
+  {
+    "question": "Where do you feel most alive?",
+    "options": [
+      {"answer": "Near water", "type": "beach"},
+      {"answer": "In the wild", "type": "adventure"},
+      {"answer": "In a quiet place", "type": "relaxation"},
+      {"answer": "In a historic town", "type": "culture"}
+    ]
+  }
+]
